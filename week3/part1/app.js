@@ -9,7 +9,7 @@ const PORT_NUMBER = 8080;
 let app = express();
 app.use(express.static("node_modules/bootstrap/dist/css"));
 app.listen(PORT_NUMBER, function () {
-	print(`listening on port ${PORT_NUMBER}`);
+	print(`Server is running at http://localhost:${PORT_NUMBER}`)
 });
 
 // Home
@@ -20,7 +20,6 @@ app.get('/', function (req, res) {
 
 // Add
 app.get('/add/:no1/:no2', function (req, res) {// parameter
-  fileName = VIEWS_PATH + "index.html";
   let number1 = parseInt(req.params.no1);
   let number2 = parseInt(req.params.no2);
   let result = number1 + number2; 
